@@ -42,11 +42,11 @@
 <div class="card-columns">
   <div *ngFor="let movie of results" class="card">
 
-  <div class="alert alert-info">
+  <div class="alert alert-info" *ngIf="photoURL(movie.poster)==false">
   <strong>Info!</strong>Immagine mancante
   </div>
 
-    <img class="card-img-top" [src]="photoURL(movie.poster)" alt="Movie poster">
+    <img class="card-img-top" [src]="photoURL(movie.poster)" alt="Movie poster" *ngIf="photoURL(movie.poster)!=false">
     <div class="card-body text-center">
     <h4 class="card-title">{{movie.title}}</h4>
     <p class="card-text">{{movie.fullplot}}</p>
